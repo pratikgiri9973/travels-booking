@@ -9,8 +9,7 @@ const authRoute = require('./routes/authroutes')
 const bookingRoute = require('./routes/bookingsRoutes')
 const path = require("path")
 
-
-dotenv.config()
+dotenv.config({ path: "./.env" })
 const app = express()
 app.use(express.static("public"))
 const port = process.env.PORT || 5000
@@ -49,8 +48,9 @@ app.use('/booking', bookingRoute)
 app.use("*", (req, res) => {
     res.sendFile(path.join(__dirname, "/public/index.html"))
 })
+connect()
 app.listen(port, () => {
-    connect()
+
     console.log('server listening on port', port);
 })
 
