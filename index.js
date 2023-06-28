@@ -13,11 +13,7 @@ dotenv.config({ path: "./.env" })
 const app = express()
 app.use(express.static("public"))
 const port = process.env.PORT || 5000
-app.use(cors({
-    credentials: true,
-    origin: "https://travels-booking-production-2eac.up.railway.app"
-    // origin: "http://localhost:5173"
-}))
+app.use(cors())
 
 
 
