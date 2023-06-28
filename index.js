@@ -15,8 +15,8 @@ const app = express()
 app.use(express.static("public"))
 const port = process.env.PORT || 5000
 app.use(cors({
-    // credentials: true,
-    // origin: "https://rich-gray-capybara-sock.cyclic.app"
+    credentials: true,
+    origin: "https://rich-gray-capybara-sock.cyclic.app"
     // origin: "http://localhost:5173"
 }))
 
